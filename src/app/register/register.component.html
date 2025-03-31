@@ -1,0 +1,11 @@
+<h2>註冊帳號</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input formControlName="email" placeholder="Email" /><br />
+  <input formControlName="password" type="password" placeholder="密碼" /><br />
+  <input formControlName="displayName" placeholder="姓名" /><br />
+  <input formControlName="phoneNumber" placeholder="電話" /><br />
+  <button type="submit" [disabled]="form.invalid">註冊</button>
+</form>
+
+<p *ngIf="error" style="color: red">{{ error }}</p>
